@@ -18,7 +18,8 @@ class WeatherService {
       return weatherModel;
     } on DioException catch (e) {
       //اطبعلي الجزء الشمالnullهنا بجيب الايرور وبقولة لو ب
-      final String errorMessage = e.response?.data['error']['message'] ??
+      final String errorMessage =
+          e.response?.data['error']['message'] ??
           'Opps there was an error, try later';
       throw Exception(errorMessage);
     } catch (e) {

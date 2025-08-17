@@ -14,23 +14,25 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetWeatherCubit(),
+      create: (context) => WeatherCubit(),
       child: Builder(
-        builder: (context) => BlocBuilder<GetWeatherCubit, WeatherState>(
-          builder: (context, state) {
-            return MaterialApp(
-              theme: ThemeData(
-                primarySwatch: getThemeColor(
-                  BlocProvider.of<GetWeatherCubit>(context)
-                      .weatherModel
-                      ?.weatherState,
-                ),
-              ),
-              debugShowCheckedModeBanner: false,
-              home: const HomeView(),
-            );
-          },
-        ),
+        builder:
+            (context) => BlocBuilder<WeatherCubit, WeatherState>(
+              builder: (context, state) {
+                return MaterialApp(
+                  theme: ThemeData(
+                    primarySwatch: Colors.teal,
+                    // getThemeColor(
+                    //   BlocProvider.of<GetWeatherCubit>(context)
+                    //       .weatherModel
+                    //       ?.weatherState,
+                    // ),
+                  ),
+                  debugShowCheckedModeBanner: false,
+                  home: const HomeView(),
+                );
+              },
+            ),
       ),
     );
   }

@@ -8,11 +8,8 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.blue,
-        title: const Text(
-          'Search City',
-          //style: TextStyle(color: Colors.white),
-        ),
+        backgroundColor: Color(0xff88A6C0),
+        title: const Text('Search City', style: TextStyle(color: Colors.white)),
       ),
       body: const SearchTextField(),
     );
